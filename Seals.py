@@ -47,5 +47,5 @@ class OrangeSeal(Seals):
 class JadeSeal(Seals):
     # __init__ is the contructor method
     def __init__(self):  # attribute of the Gold class
-        super().__init__(name="Purple",
+        super().__init__(name="Jade",
                          description="A round Jade coloured metal seal with stamped on the front.")

@@ -1,0 +1,5 @@
+StartingRoom|EmptyCavePath|CollectGold|||
+CollectGold|BrickGate|CollectCoins|||
+getWeapons|LynxDemon_Kingdom||||
+|Hermits_Cage||||
+|LeaveDemonsFirstlevel||||

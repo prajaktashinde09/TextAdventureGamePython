@@ -15,50 +15,50 @@
 
 class Lynx_Demon(Enemy):
     def __init__(self):
-        super().__init__(name="Lynx", hp=60, damage=20)
+        super().__init__(name="LYNX", hp=20, damage=20)
 
 
 class Hermit_Demon(Enemy):
     def __init__(self):
-        super().__init__(name="Hermit", hp=120, damage=30)
+        super().__init__(name="HERMIT", hp=20, damage=30)
 
 
 class Shin(Enemy):
     def __init__(self):
-        super().__init__(name="Ogre", hp=30, damage=15)
+        super().__init__(name="SHIN", hp=30, damage=15)
 
 
 class Brick(Enemy):
     def __init__(self):
-        super().__init__(name="Dog", hp=20, damage=10)
+        super().__init__(name="BRICK", hp=20, damage=10)
 
 
 class Needle(Enemy):
     def __init__(self):
-        super().__init__(name="Needle", hp=10, damage=15)
+        super().__init__(name="NEEDLE", hp=10, damage=15)
 
 
 class Ghost(Enemy):
     def __init__(self):
-        super().__init__(name="Ghost", hp=10, damage=15)
+        super().__init__(name="GHOST", hp=10, damage=15)
 
 
 class Dandy(Enemy):
     def __init__(self):
-        super().__init__(name="Dandy", hp=10, damage=15)
+        super().__init__(name="DANDY", hp=10, damage=15)
 
 
 class Dragon(Enemy):
     def __init__(self):
-        super().__init__(name="Dragon", hp=10, damage=15)
+        super().__init__(name="DRAGON", hp=10, damage=15)
 
 
 class Buffalo(Enemy):
     def __init__(self):
-        super().__init__(name="Buffalo", hp=10, damage=15)
+        super().__init__(name="BUFFALO", hp=10, damage=15)
 
 
 class Mantis(Enemy):
     def __init__(self):
-        super().__init__(name="Needle", hp=10, damage=15)
+        super().__init__(name="MANTIS", hp=10, damage=15)
 

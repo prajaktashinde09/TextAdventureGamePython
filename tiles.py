@@ -1,7 +1,9 @@
-﻿import items, enemies, actions, world, Seals
+﻿import game
+import items, enemies, actions, world, Seals
 import player
 
 level_one_passed = False
+
 
 class MapTile:
     def __init__(self, x, y):
@@ -105,8 +107,6 @@ class StartingRoom(MapTile):
     There are 3 Levels. On each 3 levels shadow will get 2 seals by defeating demons.
     You are on now Level 1 -  you have to defeat Lynx, Hermit and their bodyguards to proceed to next level 2 and level 3.
     
-    You find yourself in a cave with a flickering torch on the wall.
-    You can make out four paths, each equally as dark and foreboding. 
     
     """
 
@@ -209,13 +209,13 @@ class LynxDemon_Kingdom(EnemyRoom):  # Lynx
             return """
             Lynx is a first demon boss is in front of you!!!
             He is the only enemy who has the Time Bomb enchantment on a weapon !!!
-            Defeat him to collect Blue seal !!!
+            Defeat him to collect 1. BLUE SEAL !!!
             """
         else:
             # player.collect_Blue_seal(Seals.BlueSeal())
             return """
             The corpse of a dead Lynx rots on the ground.
-            You have collected Blue Seal !!!
+            You have collected 1. BLUE SEAL !!!
             You can proceed to defeat second demon called Hermit and collect  green seal !!!!. 
             """
 
@@ -228,7 +228,9 @@ class Hermits_Cage(EnemyRoom):  # Lynx
         if self.enemy.is_alive():
             return """Hermit is a second demon boss is in front of you. Hermit is an elderly and wise teacher who is 
             feared for his devastating, mysterious powers. Defeat him and collect Green Seal from him then you will 
-            be able to go next level 2. """
+            be able to go next level 2. 
+            Defeat him to collect 2. GREEN SEAL !!!
+            """
         else:
             player.collect_Blue_seal(Seals.BlueSeal())
 
@@ -245,7 +247,7 @@ class BrickGate(EnemyRoom):
     def intro_text(self):
         if self.enemy.is_alive():
             return """
-            You are in front of Brick Bodyguard. Bodyguard armed with Steel Batons.
+            You are in front of 'Brick' Bodyguard. Bodyguard armed with Steel Batons.
             """
         else:
             return """
@@ -268,7 +270,7 @@ class NeedlePath(EnemyRoom):
              """
 
 
-class GhostShell(EnemyRoom):
+class GhostShell(EnemyRoom):  # RED SEAL
     def __init__(self, x, y):
         super().__init__(x, y, enemies.Ghost())
 
@@ -276,6 +278,7 @@ class GhostShell(EnemyRoom):
         if self.enemy.is_alive():
             return """
             A giant Ghost with powerful black magic weapons jumps down from  in front of you!
+            defeat him to get  3. RED SEAL
             """
         else:
             return """
@@ -283,7 +286,7 @@ class GhostShell(EnemyRoom):
             """
 
 
-class DandyPlace(EnemyRoom):
+class DandyPlace(EnemyRoom):  # purple SEAL
     def __init__(self, x, y):
         super().__init__(x, y, enemies.Dandy())
 
@@ -291,6 +294,7 @@ class DandyPlace(EnemyRoom):
         if self.enemy.is_alive():
             return """
             You are in front of Dandy. A Bodyguard armed with Swords.
+            defeat him to get  4. PURPLE SEAL
             """
         else:
             return """
@@ -298,7 +302,7 @@ class DandyPlace(EnemyRoom):
             """
 
 
-class DragonPark(EnemyRoom):
+class DragonPark(EnemyRoom):  # Orange SEAL
     def __init__(self, x, y):
         super().__init__(x, y, enemies.Dragon())
 
@@ -306,6 +310,7 @@ class DragonPark(EnemyRoom):
         if self.enemy.is_alive():
             return """
             You waking through A dragon Park. A giant Dragon Fire is in front of you !!! 
+            defeat him to get  5. ORANGE SEAL
             """
         else:
             return """
@@ -313,7 +318,7 @@ class DragonPark(EnemyRoom):
             """
 
 
-class Buffalo(EnemyRoom):
+class Buffalo(EnemyRoom):  # JADE SEAL
     def __init__(self, x, y):
         super().__init__(x, y, enemies.Buffalo())
 
@@ -321,6 +326,7 @@ class Buffalo(EnemyRoom):
         if self.enemy.is_alive():
             return """
             Be careful, Angry Buffalo is looking at you. !!
+            defeat him to get  6.JADE SEAL 
             """
         else:
             return """
@@ -330,7 +336,7 @@ class Buffalo(EnemyRoom):
 
 class Mantis(EnemyRoom):
     def __init__(self, x, y):
-        super().__init__(x, y, enemies.Ghost())
+        super().__init__(x, y, enemies.Mantis())
 
     def intro_text(self):
         if self.enemy.is_alive():
@@ -345,7 +351,7 @@ class Mantis(EnemyRoom):
 
 class LeaveDemonsFirstlevel(MapTile):
     def intro_text(self):
-        if len(player.all_seals) == 2:
+        if len(player.all_seals) == 2 or len(player.all_seals) == 4 or len(player.all_seals) == 6:
             return """
             You see a bright light in the distance...
             ... it grows as you get closer! It's sunlight!
@@ -356,8 +362,7 @@ class LeaveDemonsFirstlevel(MapTile):
             return """You still need to search seals to go ahead"""
 
     def modify_player(self, player1):
-        if len(player.all_seals) == 2:
-            level_one_passed = True
+        if len(player.all_seals) == 2 or len(player.all_seals) == 4 or len(player.all_seals) == 6:
             player1.victory = True
         else:
             player1.victory = False

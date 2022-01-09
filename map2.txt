@@ -1,4 +1,5 @@
 StartingRoom|EmptyCavePath|CollectGold|||
-CollectGold|BrickGate|CollectCoins|||
-|Hermits_Cage|getWeapons|||
+CollectGold|NeedlePath|CollectCoins|||
+getWeapons|GhostShell||||
+|DandyPlace||||
 |LeaveDemonsFirstlevel||||

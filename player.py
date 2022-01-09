@@ -71,15 +71,36 @@ class Player():
         enemy.hp -= best_weapon.damage
         if not enemy.is_alive():
             print("\nYou killed demon {}!".format(enemy.name))
-            if enemy.name == "Lynx":
-                print("!!!!!!!!You won Blue Seal !!!!")
+            if enemy.name == "LYNX":
+                print("!!!!!!!!You won BLUE Seal !!!!")
                 collect_Blue_seal(Seals.BlueSeal())
+            if enemy.name == "HERMIT":
+                print("!!!!!!!!! You won GREEN Seal !!!!!!")
+                print("you can move forword to next level")
+                collect_Blue_seal(Seals.GreenSeal())
             else:
                 pass
-            if enemy.name == "Hermit":
-                print("!!!!!!!!! You won Green Seal !!!!!!")
+            if enemy.name == "GHOST":
+                print("!!!!!!!!! You won RED Seal !!!!!!")
+                collect_Blue_seal(Seals.RedSeal())
+            else:
+                pass
+            if enemy.name == "DANDY":
+                print("!!!!!!!!! You won Purple Seal !!!!!!")
                 print("you can move forword to next level")
-                collect_Blue_seal(Seals.BlueSeal())
+                collect_Blue_seal(Seals.PurpleSeal())
+            else:
+                pass
+            if enemy.name == "DRAGON":
+                print("!!!!!!!!! You won ORANGE Seal !!!!!!")
+                print("you can move forword to next level")
+                collect_Blue_seal(Seals.OrangeSeal())
+            else:
+                pass
+            if enemy.name == "BUFFALO":
+                print("!!!!!!!!! You won JADE Seal !!!!!!")
+                print("you can move forword to next level")
+                collect_Blue_seal(Seals.JadeSeal())
             else:
                 pass
 
